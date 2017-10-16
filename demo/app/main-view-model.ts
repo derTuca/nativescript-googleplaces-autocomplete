@@ -11,6 +11,5 @@ export class HelloWorldModel extends Observable {
       this.googleplacesAutocomplete.init("AIzaSyBjJ4O4S-rYJytOg_wEEdUoDaoCazvRU_E");
       this.googleplacesAutocomplete.get("Bacau", PlaceTypes.City);
     }, 5000);
-    
   }
 }

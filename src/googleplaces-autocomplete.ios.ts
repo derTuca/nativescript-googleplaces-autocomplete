@@ -1,6 +1,7 @@
 
 import { Common } from './googleplaces-autocomplete.common';
 import { AutocompletePrediction } from './autocomplete-prediction';
+import { FilterTypes } from './filter-types';
 
 declare var GMSPlacesClient: any;
 declare var GMSAutocompleteFilter;
@@ -10,15 +11,6 @@ declare var kGMSPlacesAutocompleteTypeFilterNoFilter: any;
 declare var kGMSPlacesAutocompleteTypeFilterGeocode: any;
 declare var kGMSPlacesAutocompleteTypeFilterAddress: any;
 declare var kGMSPlacesAutocompleteTypeFilterEstablishment: any;
-
-export const enum FilterTypes {
-    Region,
-    City,
-    NoFilter,
-    Geocode,
-    Address,
-    Establishment
-}
 
 export class GoogleplacesAutocomplete {
     key: string;
@@ -56,8 +48,7 @@ export class GoogleplacesAutocomplete {
             client.autocompleteQueryBoundsFilterCallback(query, null, filter, (serverResponse: NSMutableArray<any>, err: NSError) => {
                 if(err) reject(err.localizedDescription);
                 let response: AutocompletePrediction[] = [];
-                // tslint:disable-next-line:no-var-keyword
-                for (var i = 0; i < serverResponse.count; i++) {
+                for (let i = 0; i < serverResponse.count; i++) {
                     let obj = new AutocompletePrediction();
                     obj.id = serverResponse[i].placeID;
                     obj.prediction = serverResponse[i].attributedFullText.string;
