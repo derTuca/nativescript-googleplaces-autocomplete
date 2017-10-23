@@ -14,8 +14,11 @@ declare var kGMSPlacesAutocompleteTypeFilterEstablishment: any;
 
 export class GoogleplacesAutocomplete {
     key: string;
-    init(apiKey: string) {
-        this.key = apiKey;
+    init(apiKey: string): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.key = apiKey;
+            resolve();
+        });
     }
     get(query: string, filterType: FilterTypes): Promise<AutocompletePrediction[]> {
         let filter;

@@ -15,6 +15,6 @@ export declare class GoogleplacesAutocomplete {
   // define your typings manually
   // or..
   // take the ios or android .d.ts files and copy/paste them here
-  init(apiKey: string);
-  get(query: string, placeType: PlaceTypes): Promise<AutocompletePrediction>;
+  init(apiKey: string): Promise<any>;
+  get(query: string, placeType: PlaceTypes): Promise<AutocompletePrediction[]>;
 }
