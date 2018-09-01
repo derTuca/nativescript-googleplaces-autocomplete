@@ -24,9 +24,11 @@
 		android:icon="@drawable/icon"
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme">
+		
 		<meta-data
       		android:name="com.google.android.geo.API_KEY"
-      		android:value="AIzaSyA1jyDXS0dinLIXzclWrINJhVDvuo-UKJ4"/>
+      		android:value="YOUR_API_KEY"/>
+
 		<activity
 			android:name="com.tns.NativeScriptActivity"
 			android:label="@string/title_activity_kimera"
